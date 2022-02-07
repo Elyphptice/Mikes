@@ -1,0 +1,96 @@
+@use "sass:list";
+@use "sass:map";
+
+/* -------------------------------------------------------------------------- */
+/* BOOTSTRAP OVERWRITING */
+/* -------------------------------------------------------------------------- */
+
+/* VARIABLE OVERWRITING */
+
+$enable-responsive-font-sizes: true;
+
+$line-height-base: 1.65;
+
+$font-family-sans-serif: "Catamaran", sans-serif;
+$headings-font-family: "Catamaran", sans-serif;
+
+$font-weight-base: 300;
+$btn-font-weight: 300;
+
+$font-size-root: 0.875rem;
+$font-size-base: 1rem;
+
+$h5-font-size: $font-size-base * 1.125;
+$h6-font-size: $font-size-base * 0.875;
+
+$border-radius-lg: 1.2rem;
+$border-radius: 1rem;
+
+$font-size-lg: $font-size-base * 1.15;
+$font-size-xl: $font-size-base * 1.5;
+$navbar-brand-font-size: $font-size-xl;
+
+$primary: #222222;
+$secondary: #c59d5f;
+$body-color: white;
+$border-color: #525252;
+
+$btn-active-bg-shade-amount: 0%;
+$btn-active-bg-tint-amount: 0%;
+
+button:active {
+  background-color: #525252 !important;
+}
+*:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+// Required
+@import "node_modules/bootstrap/scss/bootstrap";
+/* -------------------------------------------------------------------------- */
+/* CSS */
+/* -------------------------------------------------------------------------- */
+
+/*#region GENERAL */
+
+button:focus,
+textarea:focus {
+  outline: 0;
+}
+
+// no highlight
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+									supported by Chrome, Edge, Opera and Firefox */
+}
+.nowrap {
+  white-space: nowrap;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Stop Firefox DPI Scaling (when Windows setting is at 125%) */
+/* -------------------------------------------------------------------------- */
+
+@media only screen and( -webkit-min-device-pixel-ratio: 1.25 ),
+  only screen and( -o-min-device-pixel-ratio: 5/4 ),
+  only screen and( min-resolution: 120dpi ),
+  only screen and( min-resolution: 1.25dppx ) {
+  body {
+    font-size: 1rem;
+  }
+}
+
+
+.centered{
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
